@@ -1,3 +1,5 @@
+# Lifespan Baby Connectome Project (BCP)
+
 The LifeSpan Baby Connectome Project (BCP) aims to investigate human brain development from birth to early childhood, with a focus on factors that contribute to healthy brain development.
 
 #Study Design
@@ -10,5 +12,6 @@ This hybrid design allows for a comprehensive characterization of early brain de
 
 The study will enroll an equal proportion of males and females, and the racial/ethnic diversity of the sample will reflect US Census data.
 Imaging Analysis Tools. Our team has developed novel imaging analysis tools that provide quantitative measures of early brain development. These tools will be integrated into the Human Connectome Project (HCP) pipelines, enabling the analysis of large-scale brain imaging data.
+
 ## Release Link
 https://github.com/data-hcp/lifespan/releases/tag/bcp

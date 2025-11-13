@@ -1,3 +1,5 @@
+# Human Connectome Project Young Adult (HCP-YA) Study
+
 The data are originally from the minimally-preprocessed dMRI data from WU-Minn HCP Consortium and converted to DSI Studio SRC files format. The SRC file stores the minimum information needed for diffusion MRI processing, including the DWI data, image resolution, and the b-table. The SRC file can be converted back to 4D NIFTI in DSI Studio.
 
 # License
@@ -36,6 +38,7 @@ This data set was originally from the connectome db website (https://db.humancon
 
   **Methods**
   > A multishell diffusion scheme was used, and the b-values were 1000 ,3000 ,5000 and 10000 s/mm2. The number of diffusion sampling directions were 64, 64, 128, and 256. The in-plane resolution was 1.5 mm. The slice thickness was 1.5 mm.
+
 
 ## Release Link
 https://github.com/data-hcp/lifespan/releases/tag/hcp-ya
