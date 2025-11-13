@@ -73,18 +73,19 @@ jobs:
           
           for rel in releases:
               tag = rel.get("tag_name") or "untagged"
+              title = rel.get("name") or tag
               body = rel.get("body") or ""
-
+          
               # Clean body and detect if it starts with '#'
               stripped = body.lstrip()
               if not stripped.startswith("#"):
                   body = f"# {title}\n\n{body}"
-        
+          
               # --- build release link ---
               link = f"https://github.com/{account}/{repo_name}/releases/tag/{tag}"
           
               # --- output text with Release Link section ---
-              text = f"{body}\n## Release Link\n{link}\n"
+              text = f"{body}\n\n## Release Link\n{link}\n"
           
               fn = pathlib.Path(f"{tag}.md")
               fn.write_text(text, encoding="utf-8")
