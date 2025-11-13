@@ -1,5 +1,4 @@
-# Lifespan Baby Connectome Project (BCP)
-
+# **Lifespan Baby Connectome Project (BCP)**
 The LifeSpan Baby Connectome Project (BCP) aims to investigate human brain development from birth to early childhood, with a focus on factors that contribute to healthy brain development.
 
 #Study Design

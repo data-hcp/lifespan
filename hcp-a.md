@@ -1,4 +1,4 @@
-## **Lifespan Human Connectome Project Aging (HCP-A) Study**
+# **Lifespan Human Connectome Project Aging (HCP-A) Study**
 
 The [HCP-A Study](https://www.humanconnectome.org/study/hcp-lifespan-aging) planned to enroll 1,500+ healthy adults ages 36-100+. The purpose is to discover how individual experiences affect the ways in which different parts of the brain are connected and how these connections (the “connectome”) change across healthy adulthood.
 

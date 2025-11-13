@@ -1,14 +1,13 @@
-# Lifespan Developing Human Connectome Project (dHCP) Study
-
+# **Lifespan Developing Human Connectome Project (dHCP) Study**
 The [dHCP study](https://www.humanconnectome.org/study/lifespan-developing-human-connectome-project) planned to enroll 1500 Subjects at age 20-44 weeks post-conception. The purpose is to link together imaging, clinical, behavioural, and genetic information..
 
-# License
+## License
 
 The derived files below are shared under the [dHCP data sharing agreement](http://www.developingconnectome.org/open-access-dhcp-data-terms-of-use-version-4-0_2019-05-23/). The source of the data are from the [3rd release](https://biomedia.github.io/dHCP-release-notes/index.html).
 
 Users using the files should follow agreement and [cite/acknowledge the source](https://biomedia.github.io/dHCP-release-notes/cite.html).
 
-# Download
+## Download
 
 **Methods**
   > A multishell diffusion scheme was used, and the b-values were 400 ,1000 and 2600 s/mm². The number of diffusion sampling directions were 64, 88, and 128, respectively. The in-plane resolution was 1.5 mm. The slice thickness was 1.5 mm. The images were denoised and corrected for Gibbs ringing, motion, eddy current, and susceptibility artifact using [the diffusion SHARD pipeline](https://biomedia.github.io/dHCP-release-notes/dwi-shard.html). A quality check was conducted using neighboring DWI correcltion (NDC) (Yeh, Neuroimage. 2019 Nov 15;202:116131). 34 out of 758 scans (including repeated scans) were excluded due to their low NDC values identified by a median value based outlier detector. The accuracy of b-table orientation was examined by comparing fiber orientations with those of a population-averaged template (Yeh et al. Neuroimage, 2018). The restricted diffusion was quantified using restricted diffusion imaging (Yeh et al., MRM, 77:603--612 (2017)). The diffusion data were reconstructed using generalized q-sampling imaging (Yeh et al., IEEE TMI, ;29(9):1626-35, 2010) with a diffusion sampling length ratio of 1.25. The tensor metrics were calculated. The analysis was conducted using the resource allocation (TG-CIS200026) at Extreme Science and Engineering Discovery Environment (XSEDE) resources (Towns, J. et al. Computing in science & engineering 16, 62-74  2014).
@@ -19,7 +18,7 @@ Users using the files should follow agreement and [cite/acknowledge the source](
 - [Connectometry DB](https://pitt-my.sharepoint.com/:f:/g/personal/yehfc_pitt_edu/EtpIYIZ9Xt5Dvvd4-mmX6NIBDXnIBVBwMswWmbPILA_dWg?e=O3BoDn) for correlational or differential tractography
 - [Demographics](https://biomedia.github.io/dHCP-release-notes/supplementary_files/combined.tsv)
 
-# Processing Steps
+## Processing Steps
 
 **1. generate SRC files from NIFTI files**
 

@@ -1,8 +1,8 @@
-### **Lifespan Human Connectome Project Development (HCP-D) Study**
+# **Lifespan Human Connectome Project Development (HCP-D) Study**
 
 The [HCP-D Study](https://www.humanconnectome.org/study/hcp-lifespan-development) planned to enroll 1,300+ healthy children, adolescents, and young adults (ages 5-21). The purpose is to discover how different parts of a child's brain are connected and how these connections (the "connectome") change as the brain develops.
 
-# License
+## License
 
 The [NDA](https://nda.nih.gov/) agreement prohibits me from sharing raw MRI data (e.g. T1W, DWI, and SRC.GZ files). After discussion with the NDA program lead, I am allowed to share the "derived" data, including the anisotropy, diffusivities, local fiber orientations, and tractography. This includes the FIB file and the tractography. For other data, you may request access at [NDA](https://nda.nih.gov/).
 
