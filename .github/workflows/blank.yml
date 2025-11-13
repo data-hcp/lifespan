@@ -27,14 +27,13 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
           python << 'PY'
-          import os, pathlib, requests
+          import os, pathlib, requests, re
           from requests.adapters import HTTPAdapter
           from urllib3.util.retry import Retry
           from requests.exceptions import ChunkedEncodingError
           
           repo = os.environ["GITHUB_REPOSITORY"]  # e.g. data-others/brain
           token = os.environ.get("GITHUB_TOKEN", "")
-          
           account, repo_name = repo.split("/")
           
           session = requests.Session()
@@ -76,15 +75,30 @@ jobs:
               title = rel.get("name") or tag
               body = rel.get("body") or ""
           
-              # Clean body and detect if it starts with '#'
-              stripped = body.lstrip()
-              if not stripped.startswith("#"):
-                  body = f"# {title}\n\n{body}"
+              # Normalize newlines
+              body = body.replace('\r\n', '\n').strip()
           
-              # --- build release link ---
+              # --- Ensure first heading line ---
+              lines = body.splitlines() if body else []
+              if not lines:
+                  lines = [f"# **{title}**"]
+              else:
+                  first = lines[0].strip()
+                  # if not a heading, insert one
+                  if not first.startswith("#"):
+                      lines.insert(0, f"# **{title}**")
+                  else:
+                      # if first line starts with '## ' or '### ', promote to single '# '
+                      lines[0] = re.sub(r"^(#{2,3})\s*", "# ", first)
+          
+              # --- Demote subsequent headings (# -> ##, but skip first line) ---
+              new_lines = [lines[0]]
+              for line in lines[1:]:
+                  new_lines.append(re.sub(r"^(# )", "## ", line))
+              body = "\n".join(new_lines)
+          
+              # --- Build release link section ---
               link = f"https://github.com/{account}/{repo_name}/releases/tag/{tag}"
-          
-              # --- output text with Release Link section ---
               text = f"{body}\n\n## Release Link\n{link}\n"
           
               fn = pathlib.Path(f"{tag}.md")
