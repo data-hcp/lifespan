@@ -74,7 +74,12 @@ jobs:
           for rel in releases:
               tag = rel.get("tag_name") or "untagged"
               body = rel.get("body") or ""
-          
+
+              # Clean body and detect if it starts with '#'
+              stripped = body.lstrip()
+              if not stripped.startswith("#"):
+                  body = f"# {title}\n\n{body}"
+        
               # --- build release link ---
               link = f"https://github.com/{account}/{repo_name}/releases/tag/{tag}"
           
