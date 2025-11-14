@@ -10,9 +10,6 @@ This repository provides curated, tractography-ready **derived diffusion MRI dat
 ## **Table of Contents**
 
 - [Overview](#overview)
-- [How to Run Download Commands](#how-to-run-download-commands)
-  - [Linux / macOS (bash)](#linux--macos-bash)
-  - [Windows (PowerShell 5.x)](#windows-powershell-5x)
 - [Included HCP Datasets](#included-hcp-datasets)
   - [HCP Young Adult (HCP-YA)](#hcp-young-adult-hcp-ya)
   - [HCP Young Adult Retest (HCP-YA-Retest)](#hcp-young-adult-retest-hcp-ya-retest)
