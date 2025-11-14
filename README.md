@@ -38,6 +38,36 @@ The HCP Lifespan initiative aims to:
 
 This repository distributes **DSI Studio–ready diffusion derivatives** to reduce preprocessing load and standardize tractography workflows.
 
+---
+
+## **How to Run Download Commands**
+
+### **Linux / macOS (bash)**
+
+1. Open a terminal.
+2. `cd` into the folder where you want to save the data.
+3. Copy–paste the **bash** command blocks below.
+
+You will need `curl` and `jq` installed, for example:
+
+```bash
+sudo apt-get install curl jq        # Ubuntu/Debian
+brew install curl jq                # macOS with Homebrew
+````
+
+### **Windows (PowerShell 5.x)**
+
+On Windows 10/11, **Windows PowerShell 5.x** is installed by default.
+
+To open PowerShell in a target folder:
+
+1. Open **File Explorer** and navigate to the folder where you want to download the data.
+2. Click the **address bar**, type `powershell`, and press **Enter**.
+3. PowerShell will open with the current directory set to that folder.
+
+Then copy–paste the **PowerShell** one-line commands from each dataset section below.
+
+---
 
 ## **Included HCP Datasets**
 
@@ -58,23 +88,15 @@ High-quality multishell diffusion MRI from healthy adults (ages 22–35).
 ### **Download (Linux / macOS — bash)**
 
 ```bash
-curl -s https://api.github.com/repos/data-hcp/lifespan/releases/tags/hcp-ya \
-  | jq -r '.assets[].browser_download_url' \
-  | xargs -n1 -P4 curl -LO
+curl -s https://api.github.com/repos/data-hcp/lifespan/releases/tags/hcp-ya | jq -r '.assets[].browser_download_url' | xargs -n1 -P4 curl -LO
 ```
 
 ### **Download (Windows PowerShell 5.x)**
+
 In File Explorer you can go to a folder, click in the address bar, type `powershell` and press **Enter** to open PowerShell directly in that folder.
 
 ```powershell
-$tag = 'hcp-ya'
-$api = "https://api.github.com/repos/data-hcp/lifespan/releases/tags/$tag"
-
-(Invoke-RestMethod $api).assets |
-  ForEach-Object {
-    $url = $_.browser_download_url
-    Invoke-WebRequest $url -OutFile (Split-Path $url -Leaf)
-  }
+(Invoke-RestMethod "https://api.github.com/repos/data-hcp/lifespan/releases/tags/hcp-ya").assets | ForEach-Object { Invoke-WebRequest $_.browser_download_url -OutFile (Split-Path $_.browser_download_url -Leaf) }
 ```
 
 ---
@@ -92,23 +114,15 @@ A scan–rescan subset of HCP-YA for reproducibility and reliability studies.
 ### **Download (Linux / macOS — bash)**
 
 ```bash
-curl -s https://api.github.com/repos/data-hcp/lifespan/releases/tags/hcp-ya-retest \
-  | jq -r '.assets[].browser_download_url' \
-  | xargs -n1 -P4 curl -LO
+curl -s https://api.github.com/repos/data-hcp/lifespan/releases/tags/hcp-ya-retest | jq -r '.assets[].browser_download_url' | xargs -n1 -P4 curl -LO
 ```
 
 ### **Download (Windows PowerShell 5.x)**
+
 In File Explorer you can go to a folder, click in the address bar, type `powershell` and press **Enter** to open PowerShell directly in that folder.
 
 ```powershell
-$tag = 'hcp-ya-retest'
-$api = "https://api.github.com/repos/data-hcp/lifespan/releases/tags/$tag"
-
-(Invoke-RestMethod $api).assets |
-  ForEach-Object {
-    $url = $_.browser_download_url
-    Invoke-WebRequest $url -OutFile (Split-Path $url -Leaf)
-  }
+(Invoke-RestMethod "https://api.github.com/repos/data-hcp/lifespan/releases/tags/hcp-ya-retest").assets | ForEach-Object { Invoke-WebRequest $_.browser_download_url -OutFile (Split-Path $_.browser_download_url -Leaf) }
 ```
 
 ---
@@ -129,23 +143,15 @@ Raw MRI data are under **NDA restricted access**; only derived files can be shar
 ### **Download (Linux / macOS — bash)**
 
 ```bash
-curl -s https://api.github.com/repos/data-hcp/lifespan/releases/tags/hcp-d \
-  | jq -r '.assets[].browser_download_url' \
-  | xargs -n1 -P4 curl -LO
+curl -s https://api.github.com/repos/data-hcp/lifespan/releases/tags/hcp-d | jq -r '.assets[].browser_download_url' | xargs -n1 -P4 curl -LO
 ```
 
 ### **Download (Windows PowerShell 5.x)**
+
 In File Explorer you can go to a folder, click in the address bar, type `powershell` and press **Enter** to open PowerShell directly in that folder.
 
 ```powershell
-$tag = 'hcp-d'
-$api = "https://api.github.com/repos/data-hcp/lifespan/releases/tags/$tag"
-
-(Invoke-RestMethod $api).assets |
-  ForEach-Object {
-    $url = $_.browser_download_url
-    Invoke-WebRequest $url -OutFile (Split-Path $url -Leaf)
-  }
+(Invoke-RestMethod "https://api.github.com/repos/data-hcp/lifespan/releases/tags/hcp-d").assets | ForEach-Object { Invoke-WebRequest $_.browser_download_url -OutFile (Split-Path $_.browser_download_url -Leaf) }
 ```
 
 ---
@@ -165,23 +171,15 @@ Adults ages 36–100+ scanned using protocols optimized for aging.
 ### **Download (Linux / macOS — bash)**
 
 ```bash
-curl -s https://api.github.com/repos/data-hcp/lifespan/releases/tags/hcp-a \
-  | jq -r '.assets[].browser_download_url' \
-  | xargs -n1 -P4 curl -LO
+curl -s https://api.github.com/repos/data-hcp/lifespan/releases/tags/hcp-a | jq -r '.assets[].browser_download_url' | xargs -n1 -P4 curl -LO
 ```
 
 ### **Download (Windows PowerShell 5.x)**
+
 In File Explorer you can go to a folder, click in the address bar, type `powershell` and press **Enter** to open PowerShell directly in that folder.
 
 ```powershell
-$tag = 'hcp-a'
-$api = "https://api.github.com/repos/data-hcp/lifespan/releases/tags/$tag"
-
-(Invoke-RestMethod $api).assets |
-  ForEach-Object {
-    $url = $_.browser_download_url
-    Invoke-WebRequest $url -OutFile (Split-Path $url -Leaf)
-  }
+(Invoke-RestMethod "https://api.github.com/repos/data-hcp/lifespan/releases/tags/hcp-a").assets | ForEach-Object { Invoke-WebRequest $_.browser_download_url -OutFile (Split-Path $_.browser_download_url -Leaf) }
 ```
 
 ---
@@ -202,45 +200,29 @@ Neonatal and preterm brain imaging, 20–44 weeks post-conception.
 ### **Download (dHCP — Linux / macOS — bash)**
 
 ```bash
-curl -s https://api.github.com/repos/data-hcp/lifespan/releases/tags/dhcp \
-  | jq -r '.assets[].browser_download_url' \
-  | xargs -n1 -P4 curl -LO
+curl -s https://api.github.com/repos/data-hcp/lifespan/releases/tags/dhcp | jq -r '.assets[].browser_download_url' | xargs -n1 -P4 curl -LO
 ```
 
 ### **Download (dHCP — Windows PowerShell 5.x)**
+
 In File Explorer you can go to a folder, click in the address bar, type `powershell` and press **Enter** to open PowerShell directly in that folder.
 
 ```powershell
-$tag = 'dhcp'
-$api = "https://api.github.com/repos/data-hcp/lifespan/releases/tags/$tag"
-
-(Invoke-RestMethod $api).assets |
-  ForEach-Object {
-    $url = $_.browser_download_url
-    Invoke-WebRequest $url -OutFile (Split-Path $url -Leaf)
-  }
+(Invoke-RestMethod "https://api.github.com/repos/data-hcp/lifespan/releases/tags/dhcp").assets | ForEach-Object { Invoke-WebRequest $_.browser_download_url -OutFile (Split-Path $_.browser_download_url -Leaf) }
 ```
 
 ### **Download (dHCP-Retest — Linux / macOS — bash)**
 
 ```bash
-curl -s https://api.github.com/repos/data-hcp/lifespan/releases/tags/dhcp-retest \
-  | jq -r '.assets[].browser_download_url' \
-  | xargs -n1 -P4 curl -LO
+curl -s https://api.github.com/repos/data-hcp/lifespan/releases/tags/dhcp-retest | jq -r '.assets[].browser_download_url' | xargs -n1 -P4 curl -LO
 ```
 
 ### **Download (dHCP-Retest — Windows PowerShell 5.x)**
+
 In File Explorer you can go to a folder, click in the address bar, type `powershell` and press **Enter** to open PowerShell directly in that folder.
 
 ```powershell
-$tag = 'dhcp-retest'
-$api = "https://api.github.com/repos/data-hcp/lifespan/releases/tags/$tag"
-
-(Invoke-RestMethod $api).assets |
-  ForEach-Object {
-    $url = $_.browser_download_url
-    Invoke-WebRequest $url -OutFile (Split-Path $url -Leaf)
-  }
+(Invoke-RestMethod "https://api.github.com/repos/data-hcp/lifespan/releases/tags/dhcp-retest").assets | ForEach-Object { Invoke-WebRequest $_.browser_download_url -OutFile (Split-Path $_.browser_download_url -Leaf) }
 ```
 
 ---
@@ -261,23 +243,15 @@ Infancy through age 5, imaged using infant-optimized HCP-style protocols.
 ### **Download (Linux / macOS — bash)**
 
 ```bash
-curl -s https://api.github.com/repos/data-hcp/lifespan/releases/tags/bcp \
-  | jq -r '.assets[].browser_download_url' \
-  | xargs -n1 -P4 curl -LO
+curl -s https://api.github.com/repos/data-hcp/lifespan/releases/tags/bcp | jq -r '.assets[].browser_download_url' | xargs -n1 -P4 curl -LO
 ```
 
 ### **Download (Windows PowerShell 5.x)**
+
 In File Explorer you can go to a folder, click in the address bar, type `powershell` and press **Enter** to open PowerShell directly in that folder.
 
 ```powershell
-$tag = 'bcp'
-$api = "https://api.github.com/repos/data-hcp/lifespan/releases/tags/$tag"
-
-(Invoke-RestMethod $api).assets |
-  ForEach-Object {
-    $url = $_.browser_download_url
-    Invoke-WebRequest $url -OutFile (Split-Path $url -Leaf)
-  }
+(Invoke-RestMethod "https://api.github.com/repos/data-hcp/lifespan/releases/tags/bcp").assets | ForEach-Object { Invoke-WebRequest $_.browser_download_url -OutFile (Split-Path $_.browser_download_url -Leaf) }
 ```
 
 ---
