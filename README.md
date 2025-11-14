@@ -5,24 +5,6 @@ The **Human Connectome Project (HCP)** has expanded from its original young-adul
 This repository provides curated, tractography-ready **derived diffusion MRI datasets** (FIB, QSDR, GQI, SRC when permitted, QC tables).  
 **Raw MRI data are not hosted here** and must be obtained through ConnectomeDB, NDA, or dHCP under each dataset’s data-use agreement.
 
----
-
-## **Table of Contents**
-
-- [Overview](#overview)
-- [Included HCP Datasets](#included-hcp-datasets)
-  - [HCP Young Adult (HCP-YA)](#hcp-young-adult-hcp-ya)
-  - [HCP Young Adult Retest (HCP-YA-Retest)](#hcp-young-adult-retest-hcp-ya-retest)
-  - [HCP Development (HCP-D)](#hcp-development-hcp-d)
-  - [HCP Aging (HCP-A)](#hcp-aging-hcp-a)
-  - [Developing Human Connectome Project (dHCP & dHCP-Retest)](#developing-human-connectome-project-dhcp--dhcp-retest)
-  - [Baby Connectome Project (BCP)](#baby-connectome-project-bcp)
-- [Licenses](#licenses)
-- [Citations](#citations)
-- [Disclaimer](#disclaimer)
-
----
-
 ## **Overview**
 
 The HCP Lifespan initiative aims to:
