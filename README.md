@@ -6,10 +6,9 @@ This repository provides curated, tractography-ready derivatives (FIB files, QSD
 
 ---
 
-## Downloading Releases via `curl`
+## Download via `curl`
 
-You can download all assets for a given release tag using the GitHub API, `jq`, and `curl`.  
-Make sure you have **`curl`** and **`jq`** installed, then run the corresponding command in a terminal.
+You can download all files for a given dataset using the following examples (Linux environments): 
 
 ```bash
 # General pattern (replace <TAG> with a release tag, e.g. hcp-ya)
